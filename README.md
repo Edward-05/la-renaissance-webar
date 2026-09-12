@@ -1,5 +1,11 @@
 # LA RENAISSANCE — classroom WebAR
 
+Public site: https://edward-05.github.io/la-renaissance-webar/
+
+Open the site on your phone. Tap Start camera, allow Camera, and scan the sample poster displayed on another screen or printed on paper.
+
+Poster: https://edward-05.github.io/la-renaissance-webar/assets/poster.jpg
+
 A static MindAR + A-Frame prototype. No Unity export, Vuforia key, paid AR platform, npm build, or installed mobile app is needed. Camera frames are processed in the browser. The two pinned AR libraries download from public CDNs when Start camera is tapped; internet access is required.
 
 ## Files
@@ -53,7 +59,7 @@ Publish `main` → **/(root)**, then open:
 
 GitHub's branch folder selector supports the root or `/docs`, not an arbitrary `/webar` source folder. Use the subpath above, or a Pages Actions workflow if you want to publish only this subfolder. All project asset URLs are relative so repository subpaths work.
 
-This folder is ready to deploy; creating a local folder does **not** publish a GitHub Pages URL automatically.
+This project is published from `main`. Commit and push future changes to redeploy it.
 
 ## Change the Visit destination
 
@@ -127,7 +133,7 @@ Verified on 2026-09-12 using isolated desktop Chrome with a 390×844 viewport an
 - No uncaught page errors in the main tracking/video test.
 - The included MP4 probes as H.264/yuv420p, 640×360, 24 fps, 6 seconds.
 
-Physical iPhone Safari and Android Chrome camera/lighting tests remain unverified. Desktop simulation does not establish device compatibility. No public GitHub Pages deployment was created by this delivery.
+Physical iPhone Safari and Android Chrome camera/lighting tests remain unverified. Desktop simulation does not establish device compatibility. GitHub Pages deployment is configured from the main branch at the public URL above.
 
 ## Sources
 
