@@ -33,3 +33,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Event assets
+
+The event poster and welcome image are supplied by the project owner from their LA RENAISSANCE project. The MindAR event target was compiled locally from the supplied Poster 2 fix.png artwork. The verified event QR is generated for the public website URL. The Unity scene and its assets are exported from the owner's event project; any underlying asset licenses remain applicable. The older sample files are retained only as development references and are not used for live event recognition.

@@ -2,7 +2,7 @@
    Relative paths such as './tour.html' work under a GitHub Pages repository. */
 const CONFIG = Object.freeze({
   visitUrl: '#visit-info',
-  targetUrl: './assets/targets.mind',
+  targetUrl: './assets/event-targets.mind',
   videoUrl: './assets/video.mp4',
   aframeUrl: 'https://aframe.io/releases/1.5.0/aframe.min.js',
   mindarUrl: 'https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js'
@@ -66,6 +66,12 @@ async function playClip() {
 function setTracking(tracked) {
   if (!ready || interrupted) return;
   found = tracked;
+  if (tracked) {
+    interrupted = true;
+    releaseCamera();
+    location.replace('./?scanned=1');
+    return;
+  }
   $('actions').hidden = !tracked;
   $('scan-guide').hidden = tracked;
   $('status').textContent = tracked ? 'Poster found — explore your experience.' : 'Point your camera at the test poster.';
@@ -90,14 +96,8 @@ function makeScene() {
   scene.setAttribute('xr-mode-ui', 'enabled: false');
   scene.setAttribute('device-orientation-permission-ui', 'enabled: false');
   scene.setAttribute('loading-screen', 'enabled: false');
-  scene.innerHTML = `<a-assets timeout="10000"></a-assets>
-    <a-camera position="0 0 0" look-controls="enabled: false" wasd-controls="enabled: false"></a-camera>
-    <a-entity id="poster-target" mindar-image-target="targetIndex: 0">
-      ${mode === 'video' ? '<a-video src="#overlay-video" width="1" height="0.5625" position="0 0 0.015" material="shader: flat; side: double;"></a-video>' : `
-      <a-plane width="1" height="0.552" position="0 0 0.005" material="color: #101d22; opacity: 0.85; transparent: true; shader: flat; side: double;"></a-plane>
-      <a-box id="object" width="0.25" height="0.25" depth="0.25" position="0 0 0.19" rotation="20 35 0" color="#fd9212" animation="property: rotation; to: 20 395 0; loop: true; dur: 6500; easing: linear; pauseEvents: tracking-pause; resumeEvents: tracking-resume;"></a-box>
-      <a-ring radius-inner="0.21" radius-outer="0.22" position="0 0 0.012" material="shader: flat; color: #fd9212; side: double;"></a-ring>`}
-    </a-entity>`;
+  scene.innerHTML = `<a-camera position="0 0 0" look-controls="enabled: false" wasd-controls="enabled: false"></a-camera>
+    <a-entity id="poster-target" mindar-image-target="targetIndex: 0"></a-entity>`;
   if (mode === 'video') {
     clip = document.createElement('video');
     clip.id = 'overlay-video';
