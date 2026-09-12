@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>LA RENAISSANCE — Event</title>
+<script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#090b0e;font-family:Arial,sans-serif}#ui{position:fixed;z-index:3;inset:auto 16px 18px;display:flex;justify-content:space-between;align-items:end;pointer-events:none}#ui>*{pointer-events:auto}h1{margin:0;color:#f4c16a;font:700 16px Georgia,serif;letter-spacing:.16em}p{margin:5px 0 0;color:#eee8dc;font-size:12px}a{display:inline-block;padding:13px 18px;border-radius:999px;background:#f49a18;color:#17120a;text-decoration:none;font-weight:700}</style></head>
+<body><a-scene embedded renderer="colorManagement:true; physicallyCorrectLights:true" background="color:#090b0e">
+  <a-assets><img id="poster" src="assets/event-poster.jpg"><video id="loop" src="assets/video.mp4" autoplay loop muted playsinline crossorigin="anonymous"></video></a-assets>
+  <a-entity light="type:ambient;color:#9a835f;intensity:1.4"></a-entity><a-entity light="type:point;color:#ffc46b;intensity:18;distance:12" position="0 3 -2"></a-entity>
+  <a-box position="0 1.5 -4" width="8" height="3" depth=".2" color="#171b22"></a-box><a-plane src="#poster" position="0 1.6 -3.86" width="2.15" height="3.2"></a-plane>
+  <a-plane src="#loop" position="-3 1.6 -3.8" width="2.4" height="1.35"></a-plane><a-plane rotation="-90 0 0" width="12" height="12" color="#11151b"></a-plane>
+  <a-entity position="0 1.6 2"><a-camera look-controls="magicWindowTrackingEnabled:true" wasd-controls-enabled="false" cursor="rayOrigin:mouse"></a-camera></a-entity>
+</a-scene><div id="ui"><div><h1>LA RENAISSANCE</h1><p>Drag or turn your phone to explore</p></div><a href="./">Visit main page ↗</a></div></body></html>

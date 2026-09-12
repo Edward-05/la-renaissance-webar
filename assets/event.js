@@ -51,7 +51,11 @@ el('visit').onclick=async()=>{
    showBanner:(message,type)=>{if(type==='error')console.error(message)}
   },progress=>{el('progress').value=progress;el('load-status').textContent=`Loading event — ${Math.round(progress*100)}%`});
   window.eventUnity=unity;el('loading').hidden=true;el('unity-canvas').focus();
- }catch(error){el('loading').hidden=true;el('error').hidden=false;el('error-text').textContent=error.message||String(error)}
+ }catch(error){
+  // GitHub Pages cannot host the full Unity export when its data file exceeds
+  // GitHub's per-file limit. Keep the event usable with the lightweight scene.
+  location.replace('./experience.html');
+ }
 };
 let joyPointer=null;
 function joystick(e){const b=el('joystick').getBoundingClientRect();let x=(e.clientX-b.left-b.width/2)/40,y=(e.clientY-b.top-b.height/2)/40;const n=Math.max(1,Math.hypot(x,y));x/=n;y/=n;el('knob').style.transform=`translate(${x*35}px,${y*35}px)`;send('SetBrowserMove',`${x},${-y}`)}

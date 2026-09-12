@@ -2,7 +2,7 @@
 
 **Public website:** https://edward-05.github.io/la-renaissance-webar/
 
-This site uses the actual LA RENAISSANCE poster and welcome artwork from the Creative Media project. Visit loads a browser build of the Unity `VirtualTour` scene. The native iPhone project is retained separately.
+This site uses the actual LA RENAISSANCE poster and welcome artwork from the Creative Media project. Visit opens the event experience in the browser. The native iPhone project is retained separately.
 
 ## Phone flow
 
@@ -11,7 +11,7 @@ This site uses the actual LA RENAISSANCE poster and welcome artwork from the Cre
 3. On iPhone, allow motion access when requested, or drag to look. Use the on-screen joystick to move.
 4. Tap **Enable audio** if the browser has paused sound. **Recenter view** resets the view heading. **Exit** returns to the welcome page.
 
-The first visit downloads the Unity scene. This is a larger, interactive event than the original demo cube. Keep the page open while it loads.
+The Unity WebGL export is kept in `Creative Media/LA RENAISSANCE Web/Build` for local hosting. Its 204 MB data file is larger than GitHub's free per-file limit, so the public Pages site automatically opens the lightweight `experience.html` gallery instead. This keeps the QR-to-event flow working on free hosting.
 
 ## Scan the poster artwork instead
 
